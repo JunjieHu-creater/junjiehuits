@@ -1,5 +1,3 @@
-
-<!-- academic_personal_website/frontend/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +24,7 @@
             color: #f8fafc;
         }
         #particles-js {
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100%;
             z-index: -1;
@@ -44,46 +42,43 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .expandable {
-            transition: max-height 0.3s ease;
-            overflow: hidden;
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
     <div id="particles-js"></div>
-    <div class="container mx-auto px-4 py-8 max-w-6xl">
-        <!-- Navigation -->
+    <div class="container mx-auto px-4 py-8 max-w-6xl relative z-10">
         <nav class="flex justify-between items-center mb-12">
             <div class="text-2xl font-bold gradient-text">Junjie Hu</div>
-            <div class="flex space-x-6">
-                <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">About</a>
-                <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">Experience</a>
-                <a href="#publications" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">Publications</a>
-                <a href="#honors" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">Honors</a>
-                <a href="index_cn.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">中文</a>
-                <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">
+            <div class="flex items-center space-x-6">
+                <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">About</a>
+                <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">Experience</a>
+                <a href="#publications" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">Publications</a>
+                <a href="index_cn.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">中文</a>
+                <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">
                     <span class="dark:hidden">🌙</span>
                     <span class="hidden dark:inline">☀️</span>
                 </button>
             </div>
         </nav>
 
-        <!-- Hero Section -->
         <section id="about" class="mb-20">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <div class="w-full md:w-1/3">
-                    <img src="https://youke1.picui.cn/s1/2025/09/04/68b9965baf76b.jpg" alt="Junjie Hu" class="rounded-full shadow-xl w-64 h-64 object-cover mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <img src="https://youke1.picui.cn/s1/2025/09/04/68b9965baf76b.jpg" alt="Junjie Hu" class="rounded-full shadow-xl w-64 h-64 object-cover">
                 </div>
                 <div class="w-full md:w-2/3">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Junjie Hu (胡俊杰)</h1>
-                    <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">Master's Student in Transportation Engineering</h2>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                        👋 Hello! I'm a second-year Master's student at the 
-                        <a href="https://stte.csu.edu.cn/" class="text-primary dark:text-primary-light hover:underline">School of Transport & Transportation Engineering</a>, 
-                        <a href="https://www.csu.edu.cn/" class="text-primary dark:text-primary-light hover:underline">Central South University</a> (CSU). 
-                        Advised by <a href="https://www.researchgate.net/profile/Jaeyoung-Lee-26" class="text-primary dark:text-primary-light hover:underline">Prof. Jaeyoung Jay Lee</a>, 
-                        a distinguished researcher recognized among the top 2% of scientists globally in road safety.
+                    <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6">Master's Student in Transportation Engineering</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        👋 Hello! I'm <strong>Junjie Hu</strong>, a second-year Master's student at the 
+                        <a href="https://stte.csu.edu.cn/" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">School of Transport & Transportation Engineering</a>, 
+                        <a href="https://www.csu.edu.cn/" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">Central South University</a> (CSU). I have the privilege of being advised by <a href="https://www.researchgate.net/profile/Jaeyoung-Lee-26" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">Prof. Jaeyoung Jay Lee</a>, a distinguished researcher recognized among the top 2% of scientists globally in road safety. I am driven to analyze large-scale traffic data to uncover patterns that pave the way for safer, more intelligent, and sustainable transportation systems.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="mailto:junjie_hu@csu.edu.cn" class="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-full flex items-center transition">
@@ -100,81 +95,69 @@
             </div>
         </section>
 
-        <!-- WeChat Modal -->
         <div id="wechat-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-sm">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-sm mx-4">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold text-gray-800 dark:text-white">Scan WeChat QR Code</h3>
-                    <button onclick="hideWechat()" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                        ✕
-                    </button>
+                    <button onclick="hideWechat()" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-2xl">&times;</button>
                 </div>
                 <img src="https://youke1.picui.cn/s1/2025/09/04/68b996a5aeee7.jpg" alt="WeChat QR Code" class="w-full rounded">
-                <p class="text-gray-600 dark:text-gray-300 mt-2 text-center">Add me on WeChat</p>
+                <p class="text-gray-600 dark:text-gray-400 mt-2 text-center">Add me on WeChat</p>
             </div>
         </div>
 
-        <!-- Research Interests -->
         <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 gradient-text">Research Interests</h2>
+            <h2 class="text-3xl font-bold mb-6 gradient-text text-center">Research Interests</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-semibold mb-2">Traffic Spatio-Temporal Data Analysis</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Analyzing patterns in large-scale traffic data to improve system efficiency.</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">Traffic Spatio-Temporal Data Analysis</h3>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-4xl mb-4">🚗</div>
-                    <h3 class="text-xl font-semibold mb-2">Vehicular Decision-Making & Control</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Developing algorithms for autonomous vehicle decision systems.</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4">🚗</div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">Vehicular Decision-Making & Control</h3>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h3 class="text-xl font-semibold mb-2">Deep Learning in Transportation</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Applying neural networks to solve complex transportation problems.</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">Deep Learning in Transportation</h3>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-4xl mb-4">🛡️</div>
-                    <h3 class="text-xl font-semibold mb-2">Advanced Traffic Safety</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Innovative methodologies to enhance road safety and reduce accidents.</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">Advanced Traffic Safety</h3>
                 </div>
             </div>
         </section>
 
-        <!-- Experience -->
         <section id="experience" class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 gradient-text">Experience 💼</h2>
-            
+            <h2 class="text-3xl font-bold mb-8 gradient-text text-center">Experience 💼</h2>
             <div class="space-y-8">
-                <!-- Education -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">Education</h3>
-                    <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Education</h3>
+                    <div class="space-y-4 border-l-2 border-blue-500 pl-6">
                         <div>
-                            <h4 class="font-medium">Master of Engineering, Transportation Engineering</h4>
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">Master of Engineering, Transportation Engineering</h4>
                             <div class="flex flex-col sm:flex-row sm:justify-between text-gray-600 dark:text-gray-400">
-                                <span>School of Transportation Engineering, Central South University</span>
-                                <span>Sep 2023 - Present</span>
+                                <span><em>School of Transportation Engineering, Central South University</em></span>
+                                <span class="font-mono">Sep 2023 - Present</span>
                             </div>
                         </div>
-                        <div>
-                            <h4 class="font-medium">Bachelor of Engineering, Logistics Engineering</h4>
+                        <div class="pt-2">
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">Bachelor of Engineering, Logistics Engineering</h4>
                             <div class="flex flex-col sm:flex-row sm:justify-between text-gray-600 dark:text-gray-400">
-                                <span>School of Transportation Engineering, Central South University</span>
-                                <span>Sep 2019 - Jun 2023</span>
+                                <span><em>School of Transportation Engineering, Central South University</em></span>
+                                <span class="font-mono">Sep 2019 - Jun 2023</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Professional Experience -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">Professional Experience</h3>
-                    <div>
-                        <h4 class="font-medium">Business Risk Modeling Intern</h4>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Professional Experience</h3>
+                    <div class="border-l-2 border-green-500 pl-6">
+                        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">Business Risk Modeling Intern</h4>
                         <div class="flex flex-col sm:flex-row sm:justify-between text-gray-600 dark:text-gray-400 mb-2">
-                            <span>Magic Engine Technology Co., Ltd., Shenzhen, China</span>
-                            <span>Jul 2024 - Sep 2024</span>
+                            <span><em>Magic Engine Technology Co., Ltd., Shenzhen, China</em></span>
+                            <span class="font-mono">Jul 2024 - Sep 2024</span>
                         </div>
                         <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
                             <li>Assisted in developing and validating credit risk models for bank partners using Python (Pandas, Scikit-learn).</li>
@@ -184,195 +167,130 @@
                     </div>
                 </div>
                 
-                <!-- Volunteer -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">Volunteer & Community Engagement</h3>
-                    <div>
-                        <h4 class="font-medium">Volunteer Researcher</h4>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Volunteer & Community Engagement</h3>
+                    <div class="border-l-2 border-purple-500 pl-6">
+                        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">Volunteer Researcher</h4>
                         <div class="flex flex-col sm:flex-row sm:justify-between text-gray-600 dark:text-gray-400 mb-2">
-                            <span>Changsha Accessibility Enhancement Promotion Association, Changsha, Hunan, China</span>
-                            <span>Mar 2025 - Jun 2025</span>
+                            <span><em>Changsha Accessibility Enhancement Promotion Association, Changsha, Hunan, China</em></span>
+                            <span class="font-mono">Mar 2025 - Jun 2025</span>
                         </div>
                         <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
                             <li>Investigated transportation barriers for people with disabilities through field visits and surveys.</li>
                             <li>Co-developed a crowdsourced mapping platform for accessible facilities.</li>
-                            <li>Project Demo: <a href="https://junjiehu.pythonanywhere.com/" class="text-primary dark:text-primary-light hover:underline">View Live Project</a></li>
+                            <li>Project Demo: <a href="https://junjiehu.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">View Live Project</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Honors & Awards -->
-        <section id="honors" class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 gradient-text">Honors & Awards 🏆</h2>
-            <div class="space-y-8">
-                <!-- Scholarships -->
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">Scholarships</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-medium">2024 — National Scholarship for Graduate Students, Central South University</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">2023, 2024 — First-class Academic Scholarship, Central South University</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">2020–2022 — Third-class Academic Scholarship, Central South University</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Competitions -->
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">Competitions</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-medium">Second Prize, 20th Graduate Mathematical Modeling Contest</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">Third Prize, 21st Graduate Mathematical Modeling Contest</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">Third Prize, 15th China University Student Energy Conservation & Emission Reduction Competition</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">Third Prize (National), 7th National Undergraduate Logistics Simulation Competition</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">Multiple Awards in Mathematical Modeling Competitions</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publications -->
         <section id="publications" class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 gradient-text">Publications 📄</h2>
+            <h2 class="text-3xl font-bold mb-8 gradient-text text-center">Publications 📄</h2>
             <div class="space-y-6">
-                <!-- Publication 1 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
                     <div class="flex items-start">
-                        <span class="text-gray-500 dark:text-gray-400 mr-4 mt-1">1</span>
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">1</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Hu, C., Yang, J., Bai, J., & Lee, J. J. (2024). Do traffic flow states follow Markov properties? A high-order spatiotemporal traffic state reconstruction approach for traffic prediction and imputation. <em>Chaos, Solitons, and Fractals</em>, 183, 114965. 
-                                <a href="https://doi.org/10.1016/j.chaos.2024.114965" class="text-primary dark:text-primary-light hover:underline">Link</a>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    Designed a high-order traffic state reconstruction method demonstrating traffic flow's Markov property. Leveraged Markov matrix prior knowledge for high-accuracy traffic imputation tasks using an auto-encoder framework.
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Hu, C., Yang, J., Bai, J., & Lee, J. J. (2024). Do traffic flow states follow Markov properties? A high-order spatiotemporal traffic state reconstruction approach for traffic prediction and imputation. <em>Chaos, Solitons, and Fractals</em>, 183, 114965. <a href="https://doi.org/10.1016/j.chaos.2024.114965" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[Link]</a></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Designed a high-order traffic state reconstruction method demonstrating traffic flow's Markov property. Leveraged Markov matrix prior knowledge for high-accuracy traffic imputation tasks using an auto-encoder framework.</em></p></details>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Publication 2 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
                     <div class="flex items-start">
-                        <span class="text-gray-500 dark:text-gray-400 mr-4 mt-1">2</span>
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">2</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Bai, J., Yang, J., & Lee, J. (2024). Crash Risk Prediction Using Sparse Collision Data: Causal Inference and Graph Convolutional Networks Approaches. <em>Expert Systems with Applications</em>, 248, 125315. 
-                                <a href="https://doi.org/10.1016/j.eswa.2024.125315" class="text-primary dark:text-primary-light hover:underline">Link</a>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    Created a crash data enhancement strategy utilizing historic priori spatial and temporal knowledge. Developed a novel method, Priori Spatial and Temporal Causal Graph Convolutional Network (PST-CGCN), for predicting crash risk based on causal inference and graph convolutional networks.
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Bai, J., Yang, J., & Lee, J. (2024). Crash Risk Prediction Using Sparse Collision Data: Causal Inference and Graph Convolutional Networks Approaches. <em>Expert Systems with Applications</em>, 248, 125315. <a href="https://doi.org/10.1016/j.eswa.2024.125315" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[Link]</a></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Created a crash data enhancement strategy utilizing historic priori spatial and temporal knowledge. Developed a novel method, Priori Spatial and Temporal Causal Graph Convolutional Network (PST-CGCN), for predicting crash risk based on causal inference and graph convolutional networks.</em></p></details>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Publication 3 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
                     <div class="flex items-start">
-                        <span class="text-gray-500 dark:text-gray-400 mr-4 mt-1">3</span>
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">3</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Zhang, J., Bai, J., & Lee, J. Dynamic Correlation Analysis of Urban Crashes Using Tucker-Net Based SIRS Model: A Case Study in New York City. <em>Journal of the Franklin Institute</em>, 107946, 
-                                <a href="https://doi.org/10.1016/j.jfranklin.2025.107946" class="text-primary dark:text-primary-light hover:underline">Link</a>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    Designed a data-driven and transferable novel analysis model—Tucker-Net Based SIRS Model (TNBSM). This model combines tensor decomposition with SIRS model to explore dynamic correlations in crash regions.
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Zhang, J., Bai, J., & Lee, J. Dynamic Correlation Analysis of Urban Crashes Using Tucker-Net Based SIRS Model: A Case Study in New York City. <em>Journal of the Franklin Institute</em>, 107946. <a href="https://doi.org/10.1016/j.jfranklin.2025.107946" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[Link]</a></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Designed a new data-driven and transferable analysis model, the Tucker-Net based Susceptible-Infectious-Recovered-Susceptible (SIRS) model (TNBSM), for exploring dynamic correlations within crash zones using tensor decomposition and the SIRS model.</em></p></details>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Publication 4 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
                     <div class="flex items-start">
-                        <span class="text-gray-500 dark:text-gray-400 mr-4 mt-1">4</span>
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">4</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, & Lee, J. (2025). Car following dynamics in mixed traffic flow of autonomous and human-driven vehicles: complex networks approach. <em>Physica A: Statistical Mechanics and its Applications</em>, 665, 130519. 
-                                <a href="https://doi.org/10.1016/j.physa.2025.130519" class="text-primary dark:text-primary-light hover:underline">Link</a>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    Applied coarse-grained phase space algorithm to introduce complex network techniques into car-following behavior analysis, revealing significant characteristics and differences between autonomous vehicles (AV) and human-driven vehicles (HV).
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, & Lee, J. (2025). Car following dynamics in mixed traffic flow of autonomous and human-driven vehicles: complex networks approach. <em>Physica A: Statistical Mechanics and its Applications</em>, 665, 130519. <a href="https://doi.org/10.1016/j.physa.2025.130519" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[Link]</a></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Applied a coarse-grained phase space algorithm, introduced complex network technology into vehicle-following behavior analysis, and revealed distinct characteristics and differences between autonomous vehicles (AV) and human-driven vehicles (HV).</em></p></details>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Under Review Publications -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">Manuscripts Under Review</h3>
-                    <div class="space-y-4">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">5</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Bai, J., & Lee, J. Simplified and Efficient KNN-Based Method for High-Resolution Traffic Time-Space Diagram Imputation.
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    Proposed an improved K-nearest neighbors (KNN) framework that reconstructs and imputes time-space diagrams (TSD) from sparse data by matching similar spatiotemporal neighborhood features defined by Queen adjacency rules.
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Bai, J., & Lee, J. Simplified and Efficient KNN-Based Method for High-Resolution Traffic Time-Space Diagram Imputation. <em>(Manuscript under review)</em>.</p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Proposed a modified K-Nearest Neighbors (KNN) framework for reconstructing and imputing Time-Space Diagrams (TSD) from sparse data by matching similar spatiotemporal neighborhood features defined by Queen Contiguity Spatial Rule.</em></p></details>
                         </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">6</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Gao, D., Hu, C., Zhou, H., & Lee, J. Rethinking driving style recognition: A prediction error-based driving behavior modeling.
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    Re-examined end-to-end driving style recognition methods by exploring trajectory prediction model errors to study driver behavior heterogeneity. Utilized spatial attention and convolutional social pooling to learn interdependencies of vehicle movements and introduced multimodal distributions of future trajectories based on driving styles.
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Gao, D., Hu, C., Zhou, H., & Lee, J. Rethinking driving style recognition: A prediction error-based driving behavior modeling. <em>(Manuscript under review)</em>.</p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Revisited an end-to-end approach for driving style recognition by exploring driver behavior heterogeneity through trajectory prediction model errors. Utilized spatial attention and convolutional social pooling to learn interdependencies in vehicle motion and introduced a multi-modal distribution for future trajectories based on driving style.</em></p></details>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">7</span>
+                        <div>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Gao, D., Lee, J., & Wang, L. Vehicle dynamics analytics based on complex network techniques: a trajectory-based visibility graph approach. <em>(Manuscript under review)</em>.</p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Introduced an adaptive trajectory-based visibility graph (TVG) framework, a novel method for dissecting vehicle dynamics by transforming planar trajectory data into complex networks. This framework features a tunable visibility tolerance coefficient, dynamically scaled by lateral displacement, enabling the TVG to capture geometric occlusions and maneuver-specific spatial scales.</em></p></details>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">8</span>
+                        <div>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Lee, J., & Wang, L. Re-examining the Explanatory Boundaries of Car-Following Models: From a Systematic Decomposition of Fitting Errors to the Revelation of Adaptive Feedback Mechanisms. <em>(Manuscript under review)</em>.</p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>Contribution (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Posited that residuals of car-following (cf) model are a composite of structural errors and random error and utilized an Unobserved Components Model to decompose the residual series from three calibrated CF models.</em></p></details>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">9</span>
+                        <div>
+                            <p class="font-medium text-gray-800 dark:text-gray-200">Yang, J., Lee, J., Mao, S., & <strong>Hu, J.</strong> (2024). Dynamic safety estimation of airport pick-up area based on video trajectory data. <em>IEEE Transactions on Intelligent Transportation Systems</em>, 25(2), 1774–1786. <a href="https://doi.org/10.1109/TITS.2023.3275986" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[Link]</a></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>My Role (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Assisted in designing a modified CUSBoost algorithm for imbalanced trajectory data classification, leveraging four risk indicators and spatial distribution analysis.</em></p></details>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">10</span>
+                        <div>
+                            <p class="font-medium text-gray-800 dark:text-gray-200">Wang, L., <strong>Hu, J.</strong>, Yang, Y., & Lee, J. Analysis of injury severity of single-vehicle and two-vehicle crashes with lightweight vehicles (kei cars) in Japan: A random parameters approach with heterogeneity in means. <em>(Manuscript under review)</em>.</p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>My Role (Click to expand)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>Contributed to investigating K-car crash injury severity using a random parameters probit model with heterogeneity in means. Designed an out-of-sample prediction approach to clarify heterogeneity among various crash severity mechanisms.</em></p></details>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="border-t border-gray-200 dark:border-gray-700 pt-8 pb-12 text-center">
             <div class="flex justify-center space-x-6 mb-6">
-                <a href="mailto:junjie_hu@csu.edu.cn" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                    ✉️
+                <a href="mailto:junjie_hu@csu.edu.cn" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path></svg>
                 </a>
-                <a href="https://github.com/" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.85.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-                    </svg>
+                <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.85.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
                 </a>
-                <a href="https://www.linkedin.com/" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
+                <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
                 </a>
             </div>
             <p class="text-gray-500 dark:text-gray-400">
@@ -386,9 +304,8 @@
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
         
-        // Check for saved theme preference
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
         }
         
@@ -399,124 +316,36 @@
         });
         
         // WeChat modal
+        const wechatModal = document.getElementById('wechat-modal');
         function showWechat() {
-            document.getElementById('wechat-modal').classList.remove('hidden');
+            wechatModal.classList.remove('hidden');
         }
-        
         function hideWechat() {
-            document.getElementById('wechat-modal').classList.add('hidden');
+            wechatModal.classList.add('hidden');
         }
-        
-        // Close modal when clicking outside
-        document.getElementById('wechat-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideWechat();
-            }
+        wechatModal.addEventListener('click', function(e) {
+            if (e.target === this) hideWechat();
         });
         
         // Particles.js configuration
         document.addEventListener('DOMContentLoaded', function() {
+            const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
             particlesJS('particles-js', {
                 "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#3b82f6"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#3b82f6",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 2,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        " bounce": false,
-                        "attract": {
-                            "enable": false,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": particleColor },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": particleColor, "opacity": 0.4, "width": 1 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
                 },
                 "interactivity": {
                     "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
                     "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
+                        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                        "push": { "particles_nb": 4 }
                     }
                 },
                 "retina_detect": true
