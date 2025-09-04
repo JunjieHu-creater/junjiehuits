@@ -1,5 +1,3 @@
-
-<!-- academic_personal_website/frontend/index_cn.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -26,7 +24,7 @@
             color: #f8fafc;
         }
         #particles-js {
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100%;
             z-index: -1;
@@ -44,48 +42,47 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .expandable {
-            transition: max-height 0.3s ease;
-            overflow: hidden;
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
     <div id="particles-js"></div>
-    <div class="container mx-auto px-4 py-8 max-w-6xl">
-        <!-- 导航栏 -->
+    <div class="container mx-auto px-4 py-8 max-w-6xl relative z-10">
         <nav class="flex justify-between items-center mb-12">
             <div class="text-2xl font-bold gradient-text">胡俊杰</div>
-            <div class="flex space-x-6">
-                <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">关于我</a>
-                <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">个人经历</a>
-                <a href="#publications" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">学术成果</a>
-                <a href="#honors" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">荣誉奖项</a>
-                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">English</a>
-                <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition">
+            <div class="flex items-center space-x-6">
+                <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">关于我</a>
+                <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">个人经历</a>
+                <a href="#publications" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">学术成果</a>
+                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">English</a>
+                <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">
                     <span class="dark:hidden">🌙</span>
                     <span class="hidden dark:inline">☀️</span>
                 </button>
             </div>
         </nav>
 
-        <!-- 个人简介 -->
         <section id="about" class="mb-20">
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <div class="w-full md:w-1/3">
-                    <img src="https://youke1.picui.cn/s1/2025/09/04/68b9965baf76b.jpg" alt="胡俊杰" class="rounded-full shadow-xl w-64 h-64 object-cover mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <img src="https://youke1.picui.cn/s1/2025/09/04/68b9965baf76b.jpg" alt="胡俊杰" class="rounded-full shadow-xl w-64 h-64 object-cover">
                 </div>
                 <div class="w-full md:w-2/3">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">胡俊杰 (Junjie Hu)</h1>
-                    <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-6">交通运输工程硕士研究生</h2>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                        👋 您好！我是中南大学<a href="https://stte.csu.edu.cn/" class="text-primary dark:text-primary-light hover:underline">交通运输工程学院</a>的硕士二年级研究生，导师是<a href="https://www.researchgate.net/profile/Jaeyoung-Lee-26" class="text-primary dark:text-primary-light hover:underline">Jaeyoung Jay Lee</a>教授，一位在道路安全领域全球排名前2%的杰出学者。
+                    <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6">交通运输工程硕士研究生</h2>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                        👋 您好！我是<strong>胡俊杰</strong>，中南大学<a href="https://stte.csu.edu.cn/" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">交通运输工程学院</a>的硕士二年级研究生。我的导师是<a href="https://www.researchgate.net/profile/Jaeyoung-Lee-26" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">Jaeyoung Jay Lee</a>教授，一位在道路安全领域全球排名前2%的杰出学者。我致力于通过分析大规模交通数据来发现规律，为构建更安全、更智能、更可持续的交通系统铺平道路。
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="mailto:junjie_hu@csu.edu.cn" class="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-full flex items-center transition">
                             <span class="mr-2">📧</span> 邮箱
                         </a>
-                        <a href="assets/JunjieHu_CV.pdf" target="_blank" class="px-4 py-2 bg-secondary hover:bg-green-600 text-white rounded-full flex items-center transition">
+                        <a href="JunjieHu_CV.pdf" target="_blank" class="px-4 py-2 bg-secondary hover:bg-green-600 text-white rounded-full flex items-center transition">
                             <span class="mr-2">📄</span> 下载简历
                         </a>
                         <button onclick="showWechat()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-full flex items-center transition">
@@ -96,291 +93,202 @@
             </div>
         </section>
 
-        <!-- 微信弹窗 -->
         <div id="wechat-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-sm">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl max-w-sm mx-4">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold text-gray-800 dark:text-white">扫描微信二维码</h3>
-                    <button onclick="hideWechat()" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                        ✕
-                    </button>
+                    <button onclick="hideWechat()" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 text-2xl">&times;</button>
                 </div>
                 <img src="https://youke1.picui.cn/s1/2025/09/04/68b996a5aeee7.jpg" alt="微信二维码" class="w-full rounded">
-                <p class="text-gray-600 dark:text-gray-300 mt-2 text-center">添加我的微信</p>
+                <p class="text-gray-600 dark:text-gray-400 mt-2 text-center">添加我的微信</p>
             </div>
         </div>
 
-        <!-- 研究兴趣 -->
         <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 gradient-text">研究兴趣</h2>
+            <h2 class="text-3xl font-bold mb-6 gradient-text text-center">研究兴趣</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-semibold mb-2">交通时空数据分析</h3>
-                    <p class="text-gray-600 dark:text-gray-300">分析大规模交通数据中的模式以提高系统效率。</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">交通时空数据分析</h3>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-4xl mb-4">🚗</div>
-                    <h3 class="text-xl font-semibold mb-2">车辆决策与控制</h3>
-                    <p class="text-gray-600 dark:text-gray-300">开发自动驾驶车辆决策系统的算法。</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4">🚗</div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">车辆决策与控制</h3>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h3 class="text-xl font-semibold mb-2">深度学习在交通中的应用</h3>
-                    <p class="text-gray-600 dark:text-gray-300">应用神经网络解决复杂交通问题。</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">交通系统深度学习应用</h3>
                 </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-4xl mb-4">🛡️</div>
-                    <h3 class="text-xl font-semibold mb-2">先进交通安全</h3>
-                    <p class="text-gray-600 dark:text-gray-300">创新方法提升道路安全并减少事故。</p>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover text-center">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">先进交通安全方法论</h3>
                 </div>
             </div>
         </section>
 
-        <!-- 个人经历 -->
         <section id="experience" class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 gradient-text">个人经历 💼</h2>
-            
+            <h2 class="text-3xl font-bold mb-8 gradient-text text-center">个人经历 💼</h2>
             <div class="space-y-8">
-                <!-- 教育背景 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">教育背景</h3>
-                    <div class="space-y-4">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">教育背景</h3>
+                    <div class="space-y-4 border-l-2 border-blue-500 pl-6">
                         <div>
-                            <h4 class="font-medium">工学硕士，交通运输工程</h4>
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">工学硕士, 交通运输工程</h4>
                             <div class="flex flex-col sm:flex-row sm:justify-between text-gray-600 dark:text-gray-400">
-                                <span>中南大学交通运输工程学院</span>
-                                <span>2023年9月 - 至今</span>
+                                <span><em>中南大学 交通运输工程学院</em></span>
+                                <span class="font-mono">2023年9月 - 至今</span>
                             </div>
                         </div>
-                        <div>
-                            <h4 class="font-medium">工学学士，物流工程</h4>
+                        <div class="pt-2">
+                            <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">工学学士, 物流工程</h4>
                             <div class="flex flex-col sm:flex-row sm:justify-between text-gray-600 dark:text-gray-400">
-                                <span>中南大学交通运输工程学院</span>
-                                <span>2019年9月 - 2023年6月</span>
+                                <span><em>中南大学 交通运输工程学院</em></span>
+                                <span class="font-mono">2019年9月 - 2023年6月</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 专业经验 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">专业经验</h3>
-                    <div>
-                        <h4 class="font-medium">业务风险建模实习生</h4>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">专业经验</h3>
+                    <div class="border-l-2 border-green-500 pl-6">
+                        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">业务风险建模实习生</h4>
                         <div class="flex flex-col sm:flex-row sm:justify-between text-gray-600 dark:text-gray-400 mb-2">
-                            <span>魔引擎科技有限公司，中国深圳</span>
-                            <span>2024年7月 - 2024年9月</span>
+                            <span><em>魔引擎科技有限公司, 中国深圳</em></span>
+                            <span class="font-mono">2024年7月 - 2024年9月</span>
                         </div>
                         <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                            <li>使用Python(Pandas, Scikit-learn)协助开发和验证面向银行合作伙伴的信用风险模型</li>
-                            <li>对大规模交易数据进行预处理和特征工程，以提高模型准确性</li>
-                            <li>参与撰写风险分析报告，为业务战略提供数据驱动的洞见</li>
+                            <li>使用Python(Pandas, Scikit-learn)协助开发和验证面向银行合作伙伴的信用风险模型。</li>
+                            <li>对大规模交易数据进行预处理和特征工程，以提高模型准确性。</li>
+                            <li>参与撰写风险分析报告，为业务战略提供数据驱动的洞见。</li>
                         </ul>
                     </div>
                 </div>
                 
-                <!-- 志愿者 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">志愿者与社区服务</h3>
-                    <div>
-                        <h4 class="font-medium">志愿者研究员</h4>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200">志愿者与社区服务</h3>
+                    <div class="border-l-2 border-purple-500 pl-6">
+                        <h4 class="font-bold text-lg text-gray-800 dark:text-gray-200">志愿者研究员</h4>
                         <div class="flex flex-col sm:flex-row sm:justify-between text-gray-600 dark:text-gray-400 mb-2">
-                            <span>长沙市无障碍环境促进会，中国湖南长沙</span>
-                            <span>2025年3月 - 2025年6月</span>
+                            <span><em>长沙市无障碍环境促进会, 中国湖南长沙</em></span>
+                            <span class="font-mono">2025年3月 - 2025年6月</span>
                         </div>
                         <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1">
-                            <li>通过实地走访和问卷调研，研究残障人士在交通出行中面临的障碍</li>
-                            <li>合作开发了一个用于标记无障碍设施的众包地图平台</li>
-                            <li>项目演示: <a href="https://junjiehu.pythonanywhere.com/" class="text-primary dark:text-primary-light hover:underline">查看在线项目</a></li>
+                            <li>通过实地走访和问卷调研，研究残障人士在交通出行中面临的障碍。</li>
+                            <li>合作开发了一个用于标记无障碍设施的众包地图平台。</li>
+                            <li>项目演示: <a href="https://junjiehu.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">查看在线项目</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 荣誉奖项 -->
-        <section id="honors" class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 gradient-text">荣誉奖项 🏆</h2>
-            <div class="space-y-8">
-                <!-- 奖学金 -->
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">奖学金</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-medium">2024年 — 中南大学研究生国家奖学金</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">2023年, 2024年 — 中南大学学业一等奖学金</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">2020–2022年 — 中南大学学业三等奖学金</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 竞赛 -->
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">竞赛</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-medium">第二十届研究生数学建模竞赛二等奖</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">第二十一届研究生数学建模竞赛三等奖</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">第十五届中国大学生节能减排科技竞赛三等奖</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">第七届全国大学生物流仿真大赛全国三等奖</h4>
-                        </div>
-                        <div>
-                            <h4 class="font-medium">多项数学建模竞赛奖</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 学术成果 -->
         <section id="publications" class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 gradient-text">学术成果 📄</h2>
+            <h2 class="text-3xl font-bold mb-8 gradient-text text-center">学术成果 📄</h2>
             <div class="space-y-6">
-                <!-- 论文1 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
                     <div class="flex items-start">
-                        <span class="text-gray-500 dark:text-gray-400 mr-4 mt-1">1</span>
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">1</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Hu, C., Yang, J., Bai, J., & Lee, J. J. (2024). Do traffic flow states follow Markov properties? A high-order spatiotemporal traffic state reconstruction approach for traffic prediction and imputation. <em>Chaos, Solitons, and Fractals</em>, 183, 114965. 
-                                <a href="https://doi.org/10.1016/j.chaos.2024.114965" class="text-primary dark:text-primary-light hover:underline">链接</a>
-                                <br>
-                                <span class="text-gray-600 dark:text-gray-400">中文标题：交通流状态是否遵循马尔可夫属性？一种用于交通预测与插值的高阶时空交通状态重构方法。</span>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>主要贡献(点击展开)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    设计了一种高阶交通状态重构方法，证明了交通流的马尔可夫性。利用马尔可夫矩阵先验知识，在自编码器框架下实现了高精度的交通数据插补任务。
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Hu, C., Yang, J., Bai, J., & Lee, J. J. (2024). Do traffic flow states follow Markov properties? A high-order spatiotemporal traffic state reconstruction approach for traffic prediction and imputation. <em>Chaos, Solitons, and Fractals</em>, 183, 114965. <a href="https://doi.org/10.1016/j.chaos.2024.114965" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[链接]</a><br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：交通流状态是否遵循马尔可夫属性？一种用于交通预测与插值的高阶时空交通状态重构方法。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>主要贡献 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>设计了一种高阶交通状态重构方法，证明了交通流的马尔可夫性。利用马尔可夫矩阵先验知识，在自编码器框架下实现了高精度的交通数据插补任务。</em></p></details>
                         </div>
                     </div>
                 </div>
-                
-                <!-- 论文2 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
                     <div class="flex items-start">
-                        <span class="text-gray-500 dark:text-gray-400 mr-4 mt-1">2</span>
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">2</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Bai, J., Yang, J., & Lee, J. (2024). Crash Risk Prediction Using Sparse Collision Data: Causal Inference and Graph Convolutional Networks Approaches. <em>Expert Systems with Applications</em>, 248, 125315. 
-                                <a href="https://doi.org/10.1016/j.eswa.2024.125315" class="text-primary dark:text-primary-light hover:underline">链接</a>
-                                <br>
-                                <span class="text-gray-600 dark:text-gray-400">中文标题：基于稀疏碰撞数据的事故风险预测：因果推断与图卷积网络方法。</span>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>主要贡献(点击展开)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    提出了一种利用历史时空先验知识的事故数据增强策略。基于因果推断和图卷积网络，开发了一种名为"先验时空因果图卷积网络(PST-CGCN)"的新方法用于预测事故风险。
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Bai, J., Yang, J., & Lee, J. (2024). Crash Risk Prediction Using Sparse Collision Data: Causal Inference and Graph Convolutional Networks Approaches. <em>Expert Systems with Applications</em>, 248, 125315. <a href="https://doi.org/10.1016/j.eswa.2024.125315" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[链接]</a><br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：基于稀疏碰撞数据的事故风险预测：因果推断与图卷积网络方法。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>主要贡献 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>提出了一种利用历史时空先验知识的事故数据增强策略。基于因果推断和图卷积网络，开发了一种名为“先验时空因果图卷积网络(PST-CGCN)”的新方法用于预测事故风险。</em></p></details>
                         </div>
                     </div>
                 </div>
-                
-                <!-- 论文3 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
                     <div class="flex items-start">
-                        <span class="text-gray-500 dark:text-gray-400 mr-4 mt-1">3</span>
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">3</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Zhang, J., Bai, J., & Lee, J. Dynamic Correlation Analysis of Urban Crashes Using Tucker-Net Based SIRS Model: A Case Study in New York City. <em>Journal of the Franklin Institute</em>, 107946, 
-                                <a href="https://doi.org/10.1016/j.jfranklin.2025.107946" class="text-primary dark:text-primary-light hover:underline">链接</a>
-                                <br>
-                                <span class="text-gray-600 dark:text-gray-400">中文标题：基于Tucker-Net与SIRS模型的城市交通事故动态关联分析：以纽约市为例。</span>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>主要贡献(点击展开)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    设计了一种数据驱动且可迁移的新型分析模型——基于Tucker-Net的SIRS模型(TNBSM)。该模型结合张量分解与SIRS模型，用于探索事故区域内的动态关联性。
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Zhang, J., Bai, J., & Lee, J. Dynamic Correlation Analysis of Urban Crashes Using Tucker-Net Based SIRS Model: A Case Study in New York City. <em>Journal of the Franklin Institute</em>, 107946. <a href="https://doi.org/10.1016/j.jfranklin.2025.107946" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[链接]</a><br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：基于Tucker-Net与SIRS模型的城市交通事故动态关联分析：以纽约市为例。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>主要贡献 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>设计了一种数据驱动且可迁移的新型分析模型，即基于Tucker网络的易感-感染-恢复-易感(SIRS)模型(TNBSM)，用于利用张量分解和SIRS模型探索碰撞区域内的动态相关性。</em></p></details>
                         </div>
                     </div>
                 </div>
-                
-                <!-- 论文4 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
                     <div class="flex items-start">
-                        <span class="text-gray-500 dark:text-gray-400 mr-4 mt-1">4</span>
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">4</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, & Lee, J. (2025). Car following dynamics in mixed traffic flow of autonomous and human-driven vehicles: complex networks approach. <em>Physica A: Statistical Mechanics and its Applications</em>, 665, 130519. 
-                                <a href="https://doi.org/10.1016/j.physa.2025.130519" class="text-primary dark:text-primary-light hover:underline">链接</a>
-                                <br>
-                                <span class="text-gray-600 dark:text-gray-400">中文标题：自动驾驶与人类驾驶混合交通流中的车辆跟驰动力学：复杂网络方法。</span>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>主要贡献(点击展开)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    应用粗粒化相空间算法，将复杂网络技术引入车辆跟驰行为分析，揭示了自动驾驶车辆(AV)与人类驾驶车辆(HV)的显著特征与差异。
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, & Lee, J. (2025). Car following dynamics in mixed traffic flow of autonomous and human-driven vehicles: complex networks approach. <em>Physica A: Statistical Mechanics and its Applications</em>, 665, 130519. <a href="https://doi.org/10.1016/j.physa.2025.130519" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[链接]</a><br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：自动驾驶与人类驾驶混合交通流中的车辆跟驰动力学：复杂网络方法。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>主要贡献 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>应用粗粒化相空间算法，将复杂网络技术引入车辆跟驰行为分析，揭示了自动驾驶车辆(AV)与人类驾驶车辆(HV)的显著特征与差异。</em></p></details>
                         </div>
                     </div>
                 </div>
-                
-                <!-- 审稿中论文 -->
                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
-                    <h3 class="text-xl font-semibold mb-4">审稿中论文</h3>
-                    <div class="space-y-4">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">5</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Bai, J., & Lee, J. Simplified and Efficient KNN-Based Method for High-Resolution Traffic Time-Space Diagram Imputation.
-                                <br>
-                                <span class="text-gray-600 dark:text-gray-400">中文标题：一种简化高效的基于KNN的高分辨率交通时空图插补方法。</span>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>主要贡献(点击展开)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    提出了一种改进的K近邻(KNN)框架，通过匹配由Queen邻接规则定义的相似时空邻域特征，从稀疏数据中重构和插补时空图(TSD)。
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Bai, J., & Lee, J. Simplified and Efficient KNN-Based Method for High-Resolution Traffic Time-Space Diagram Imputation. <em>(审稿中)</em>.<br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：一种简化高效的基于KNN的高分辨率交通时空图插补方法。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>主要贡献 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>提出了一种改进的K-近邻(KNN)框架，通过匹配由后邻接空间规则定义的相似时空邻域特征，从稀疏数据中重构和插补时空图(TSD)。</em></p></details>
                         </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">6</span>
                         <div>
-                            <p class="font-medium">
-                                <strong>Hu, J.</strong>, Gao, D., Hu, C., Zhou, H., & Lee, J. Rethinking driving style recognition: A prediction error-based driving behavior modeling.
-                                <br>
-                                <span class="text-gray-600 dark:text-gray-400">中文标题：对驾驶风格识别的再思考：一种基于预测误差的驾驶行为建模。</span>
-                            </p>
-                            <details class="mt-2">
-                                <summary class="text-primary dark:text-primary-light hover:underline cursor-pointer font-medium">📝 <strong>主要贡献(点击展开)</strong></summary>
-                                <p class="text-gray-600 dark:text-gray-300 mt-2 pl-4">
-                                    通过探索轨迹预测模型误差，重新审视了端到端的驾驶风格识别方法以研究驾驶员行为的异质性。利用空间注意力和卷积社交池化学习车辆运动的相互依赖性，并基于驾驶风格引入了未来轨迹的多模态分布。
-                                </p>
-                            </details>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Gao, D., Hu, C., Zhou, H., & Lee, J. Rethinking driving style recognition: A prediction error-based driving behavior modeling. <em>(审稿中)</em>.<br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：对驾驶风格识别的再思考：一种基于预测误差的驾驶行为建模。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>主要贡献 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>通过探索驾驶员行为异质性与轨迹预测模型误差之间的关系，重新审视了端到端的驾驶风格识别方法。利用空间注意力和卷积社交池化学习车辆运动的相互依赖性，并基于驾驶风格引入了未来轨迹的多模态分布。</em></p></details>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">7</span>
+                        <div>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Gao, D., Lee, J., & Wang, L. Vehicle dynamics analytics based on complex network techniques: a trajectory-based visibility graph approach. <em>(审稿中)</em>.<br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：基于复杂网络技术的车辆动力学分析：一种基于轨迹可见性图的方法。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>主要贡献 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>引入了一种自适应的基于轨迹的可见性图(TVG)框架，这是一种通过将平面轨迹数据转换为复杂网络来剖析车辆动力学的新方法。该框架具有一个可调的可见性容差系数，通过横向位移动态缩放，使TVG能够捕捉几何遮挡和特定于操纵的空间尺度。</em></p></details>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">8</span>
+                        <div>
+                            <p class="font-medium text-gray-800 dark:text-gray-200"><strong>Hu, J.</strong>, Lee, J., & Wang, L. Re-examining the Explanatory Boundaries of Car-Following Models: From a Systematic Decomposition of Fitting Errors to the Revelation of Adaptive Feedback Mechanisms. <em>(审稿中)</em>.<br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：重新审视跟驰模型的解释边界：从拟合误差的系统分解到自适应反馈机制的揭示。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>主要贡献 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>提出跟驰模型残差是结构误差和随机误差的复合体，并利用非观测成分模型分解了三个校准跟驰模型的残差序列。</em></p></details>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">9</span>
+                        <div>
+                            <p class="font-medium text-gray-800 dark:text-gray-200">Yang, J., Lee, J., Mao, S., & <strong>Hu, J.</strong> (2024). Dynamic safety estimation of airport pick-up area based on video trajectory data. <em>IEEE Transactions on Intelligent Transportation Systems</em>, 25(2), 1774–1786. <a href="https://doi.org/10.1109/TITS.2023.3275986" target="_blank" rel="noopener noreferrer" class="text-blue-500 dark:text-blue-400 hover:underline">[链接]</a><br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：基于视频轨迹数据的机场接客区动态安全评估。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>我的职责 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>协助设计了一种改进的CUSBoost算法，用于不平衡轨迹数据分类，利用四个风险指标和空间分布分析。</em></p></details>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover">
+                    <div class="flex items-start">
+                        <span style="display: inline-block; min-width: 24px; height: 24px; line-height: 24px; text-align: center; color: white; background-color: #3b82f6; border-radius: 50%; font-weight: bold; margin-right: 12px; flex-shrink: 0;">10</span>
+                        <div>
+                            <p class="font-medium text-gray-800 dark:text-gray-200">Wang, L., <strong>Hu, J.</strong>, Yang, Y., & Lee, J. Analysis of injury severity of single-vehicle and two-vehicle crashes with lightweight vehicles (kei cars) in Japan: A random parameters approach with heterogeneity in means. <em>(审稿中)</em>.<br><span class="text-sm text-gray-500 dark:text-gray-400">中文标题：日本轻型汽车（kei cars）单车及双车事故伤害严重性分析：一种均值异质性的随机参数方法。</span></p>
+                            <details class="mt-2"><summary class="text-blue-500 dark:text-blue-400 hover:underline cursor-pointer font-medium">📝 <strong>我的职责 (点击展开)</strong></summary><p class="text-gray-600 dark:text-gray-400 mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-600"><em>协助使用带均值异质性的随机参数Probit模型研究K-car碰撞伤害严重程度。设计了一种样本外预测方法，以阐明各种碰撞严重性机制之间的异质性。</em></p></details>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 页脚 -->
         <footer class="border-t border-gray-200 dark:border-gray-700 pt-8 pb-12 text-center">
             <div class="flex justify-center space-x-6 mb-6">
-                <a href="mailto:junjie_hu@csu.edu.cn" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                    ✉️
+                <a href="mailto:junjie_hu@csu.edu.cn" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path></svg>
                 </a>
-                <a href="https://github.com/" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.85.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 01112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-                    </svg>
+                <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.85.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
                 </a>
-                <a href="https://www.linkedin.com/" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
+                <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
                 </a>
             </div>
             <p class="text-gray-500 dark:text-gray-400">
@@ -394,9 +302,8 @@
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
         
-        // 检查保存的主题偏好
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             html.classList.add('dark');
         }
         
@@ -407,124 +314,36 @@
         });
         
         // 微信弹窗
+        const wechatModal = document.getElementById('wechat-modal');
         function showWechat() {
-            document.getElementById('wechat-modal').classList.remove('hidden');
+            wechatModal.classList.remove('hidden');
         }
-        
         function hideWechat() {
-            document.getElementById('wechat-modal').classList.add('hidden');
+            wechatModal.classList.add('hidden');
         }
-        
-        // 点击弹窗外部关闭
-        document.getElementById('wechat-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideWechat();
-            }
+        wechatModal.addEventListener('click', function(e) {
+            if (e.target === this) hideWechat();
         });
         
         // 粒子效果配置
         document.addEventListener('DOMContentLoaded', function() {
+            const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
             particlesJS('particles-js', {
                 "particles": {
-                    "number": {
-                        "value": 80,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#3b82f6"
-                    },
-                    "shape": {
-                        "type": "circle",
-                        "stroke": {
-                            "width": 0,
-                            "color": "#000000"
-                        },
-                        "polygon": {
-                            "nb_sides": 5
-                        }
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": false,
-                        "anim": {
-                            "enable": false,
-                            "speed": 1,
-                            "opacity_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true,
-                        "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
-                            "sync": false
-                        }
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#3b82f6",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 2,
-                        "direction": "none",
-                        "random": false,
-                        "straight": false,
-                        "out_mode": "out",
-                        "bounce": false,
-                        "attract": {
-                            "enable": false,
-                            "rotateX": 600,
-                            "rotateY": 1200
-                        }
-                    }
+                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": particleColor },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.5, "random": true },
+                    "size": { "value": 3, "random": true },
+                    "line_linked": { "enable": true, "distance": 150, "color": particleColor, "opacity": 0.4, "width": 1 },
+                    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
                 },
                 "interactivity": {
                     "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    },
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
                     "modes": {
-                        "grab": {
-                            "distance": 140,
-                            "line_linked": {
-                                "opacity": 1
-                            }
-                        },
-                        "bubble": {
-                            "distance": 400,
-                            "size": 40,
-                            "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
-                        },
-                        "repulse": {
-                            "distance": 200,
-                            "duration": 0.4
-                        },
-                        "push": {
-                            "particles_nb": 4
-                        },
-                        "remove": {
-                            "particles_nb": 2
-                        }
+                        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                        "push": { "particles_nb": 4 }
                     }
                 },
                 "retina_detect": true
