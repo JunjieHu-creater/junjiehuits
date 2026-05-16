@@ -1,122 +1,121 @@
+/**
+ * Junjie Hu - Academic Profile
+ * Modern interactive features
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  const html = document.documentElement;
 
-<!-- academic_personal_website/frontend/js/main.js -->
-document.addEventListener('DOMContentLoaded', function() {
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    
-    // Check for saved theme preference
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') {
-        html.classList.add('dark');
-    }
-    
-    themeToggle.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        const theme = html.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', theme);
-        
-        // Track theme change in analytics
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'theme_toggle', {
-                'event_category': 'preferences',
-                'event_label': theme
-            });
-        }
+  // ========== Theme ==========
+  const themeToggle = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  }
+  themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+  });
+
+  // ========== Navbar Scroll Effect ==========
+  const navbar = document.querySelector('.navbar');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id]');
+
+  function updateNav() {
+    const scrolled = window.scrollY > 50;
+    navbar.classList.toggle('scrolled', scrolled);
+
+    // Highlight active nav link
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      if (window.scrollY >= top) {
+        current = section.getAttribute('id');
+      }
     });
-
-    // PDF preview functionality
-    const pdfViewerModal = document.createElement('div');
-    pdfViewerModal.id = 'pdf-viewer-modal';
-    pdfViewerModal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden';
-    pdfViewerModal.innerHTML = `
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl w-full max-w-4xl">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-bold text-gray-800 dark:text-white">CV Preview</h3>
-                <button id="close-pdf-viewer" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                    ✕
-                </button>
-            </div>
-            <iframe id="pdf-iframe" src="assets/JunjieHu_CV.pdf" class="w-full h-[80vh] border-none"></iframe>
-        </div>
-    `;
-    document.body.appendChild(pdfViewerModal);
-
-    // Handle PDF preview
-    const cvLinks = document.querySelectorAll('a[href*="JunjieHu_CV.pdf"]');
-    cvLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('pdf-viewer-modal').classList.remove('hidden');
-            
-            // Track PDF view in analytics
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'cv_view', {
-                    'event_category': 'engagement',
-                    'event_label': 'CV Preview'
-                });
-            }
-        });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
     });
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
 
-    // Close PDF preview
-    document.getElementById('pdf-viewer-modal').addEventListener('click', function(e) {
-        if (e.target === this || e.target.id === 'close-pdf-viewer') {
-            this.classList.add('hidden');
-        }
+  // ========== Mobile Menu ==========
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const expanded = mobileMenu.classList.contains('open');
+    mobileMenuBtn.setAttribute('aria-expanded', expanded);
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
     });
+  });
 
-    // WeChat modal functionality
-    function showWechat() {
-        document.getElementById('wechat-modal').classList.remove('hidden');
-        
-        // Track WeChat QR view in analytics
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'wechat_view', {
-                'event_category': 'engagement',
-                'event_label': 'WeChat QR Code'
-            });
-        }
+  // Close mobile menu on outside click
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+      mobileMenu.classList.remove('open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
     }
-    
-    function hideWechat() {
-        document.getElementById('wechat-modal').classList.add('hidden');
-    }
-    
-    window.showWechat = showWechat;
-    window.hideWechat = hideWechat;
+  });
 
-    // Close modal when clicking outside
-    document.getElementById('wechat-modal').addEventListener('click', function(e) {
-        if (e.target === this) {
-            hideWechat();
-        }
+  // ========== WeChat Modal ==========
+  const wechatModal = document.getElementById('wechat-modal');
+  window.showWechat = () => wechatModal.classList.add('open');
+  window.hideWechat = () => wechatModal.classList.remove('open');
+  wechatModal.addEventListener('click', (e) => {
+    if (e.target === wechatModal) hideWechat();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && wechatModal.classList.contains('open')) hideWechat();
+  });
+
+  // ========== Publication Contribution Toggle ==========
+  document.querySelectorAll('.pub-contribution-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.getAttribute('aria-controls'));
+      const isOpen = target.classList.contains('open');
+      target.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
     });
+  });
 
-    // Responsive design adjustments
-    function handleResponsive() {
-        const screenWidth = window.innerWidth;
-        if (screenWidth < 768) {
-            // Mobile-specific adjustments
-            document.querySelectorAll('.card-hover').forEach(card => {
-                card.style.transform = 'none';
-            });
-        }
-    }
+  // ========== Scroll Reveal Animations ==========
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    window.addEventListener('resize', handleResponsive);
-    handleResponsive();
+  revealElements.forEach(el => observer.observe(el));
 
-    // Initialize Google Analytics if not already present
-    if (typeof gtag === 'undefined') {
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-        document.head.appendChild(script);
-        
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    }
+  // ========== Back to Top ==========
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 500);
+  }, { passive: true });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ========== Smooth scroll for all anchor links ==========
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 });
