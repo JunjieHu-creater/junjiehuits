@@ -58,6 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Figure toggle
+  document.querySelectorAll('.pub-figure-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.getAttribute('aria-controls'));
+      const open = target.classList.contains('open');
+      target.classList.toggle('open');
+      btn.classList.toggle('open', !open);
+      btn.setAttribute('aria-expanded', !open);
+    });
+  });
+
   // Back to top
   const btt = document.getElementById('back-to-top');
   window.addEventListener('scroll', () => btt.classList.toggle('visible', scrollY > 400), { passive: true });
