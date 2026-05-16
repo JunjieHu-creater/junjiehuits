@@ -261,6 +261,29 @@ body {
 }
 .pub-contrib.open { display: block; }
 
+/* Figure toggle */
+.pub-figure-btn {
+  font-size: 0.76rem; color: var(--text-muted); background: none; border: none;
+  cursor: pointer; font-family: var(--font-sans); font-weight: 500;
+  display: inline-flex; align-items: center; gap: 3px; transition: color 0.2s;
+}
+.pub-figure-btn:hover { color: var(--accent); }
+
+.pub-figure {
+  display: none; margin-top: 12px; padding: 18px 20px;
+  background: var(--bg); border: 1px solid var(--border);
+  text-align: center;
+}
+.pub-figure.open { display: block; }
+.pub-figure img {
+  max-width: 100%; max-height: 380px; width: auto; height: auto;
+  border-radius: 1px; display: block; margin: 0 auto;
+}
+.pub-figure-caption {
+  font-size: 0.76rem; color: var(--text-muted); font-style: italic;
+  margin-top: 12px; font-family: var(--font-serif);
+}
+
 /* ----- Modal ----- */
 .modal-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.35);
