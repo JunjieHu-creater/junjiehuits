@@ -127,7 +127,12 @@ body {
 /* Hero */
 .hero { padding: 88px 0 48px; }
 .hero-inner { display: flex; align-items: flex-start; gap: 44px; }
-.hero-avatar { width: 136px; height: 136px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.hero-avatar-col { flex-shrink: 0; text-align: center; }
+.hero-avatar { width: 136px; height: 136px; border-radius: 50%; object-fit: cover; display: block; }
+.hero-updated {
+  font-size: 0.75rem; color: var(--text-muted); font-style: italic;
+  margin-top: 10px; white-space: nowrap;
+}
 
 .hero-name {
   font-family: var(--font-serif); font-size: 2.15rem; font-weight: 700;
@@ -150,7 +155,6 @@ body {
 .hero-bio em { font-style: italic; color: var(--text); }
 
 .hero-links { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.cv-note { font-size: 0.78rem; color: var(--text-muted); font-style: italic; white-space: nowrap; }
 
 /* Buttons */
 .btn {
@@ -343,7 +347,6 @@ body {
   .research-grid { grid-template-columns: repeat(2, 1fr); }
   .honors-grid { grid-template-columns: 1fr; gap: 28px; }
   .section { padding: 48px 0; }
-  .cv-note { width: 100%; text-align: center; }
 }
 
 @media (max-width: 480px) {
